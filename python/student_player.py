@@ -11,16 +11,20 @@ class StudentPlayer:
 
         self.__board = Board(self.__board_size, self.__n_to_connect)
 
-    def step(self, last_player_col: int) -> int:
+        # own code
+        self._other_player_index = 1 if player_index == 2 else 2
+
         """
         One step (column selection) of the current player.
         :param last_player_col: [-1, board_size[1]), it is -1 if there was no step yet
         :return: step (column index) of the current player
         """
-        if last_player_col != -1:
+
+    def step(self, last_player_col: int) -> int:
+        if last_player_col != -1: # if there was a step
             self.__board.step(self._other_player_index, last_player_col)
 
-        col = 0  # your logic here
-        self.__board.step(self.__player_index, col)
+        col = 0  # TODO your logic here
 
+        self.__board.step(self.__player_index, col)
         return col

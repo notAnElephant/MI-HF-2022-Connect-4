@@ -13,6 +13,7 @@
         <list>
           <option value="tuple.split" />
           <option value="int.__getitem__" />
+          <option value="random.random.choice" />
         </list>
       </option>
     </inspection_tool>
